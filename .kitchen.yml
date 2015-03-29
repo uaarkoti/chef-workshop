@@ -1,0 +1,18 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-6.4
+    driver_config:
+      forward:
+      - 80:80
+
+suites:
+  - name: default
+    run_list:
+      - recipe[chefconf::default]
+    attributes:
